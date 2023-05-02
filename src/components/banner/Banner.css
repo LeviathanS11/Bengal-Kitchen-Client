@@ -1,0 +1,8 @@
+.bannerBg{
+    background-image: url(../../assets/vegetables-set-left-black-slate.jpg);
+    height: 100vh;
+    width: 100%;
+    background-position: center ;
+    background-size: cover;
+    background-repeat: repeat;
+}
