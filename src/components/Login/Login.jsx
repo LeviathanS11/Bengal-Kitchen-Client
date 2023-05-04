@@ -34,7 +34,7 @@ const Login = () => {
                 const loggedUser = result.user;
             })
             .catch(error => {
-                console.log(error)
+                console.log(error.message)
             })
     }
     const handleGithubSignIn = () => {

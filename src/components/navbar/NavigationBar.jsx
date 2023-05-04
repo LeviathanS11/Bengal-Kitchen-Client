@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const NavigationBar = () => {
+    const {user,logOut}=useContext(AuthContext)
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container >
@@ -15,8 +17,11 @@ const NavigationBar = () => {
                         <Link className='text-decoration-none ps-2' to="/blog">Blog</Link>
                     </Nav>
                     <Nav>
-                        <Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link>
-                        <Button variant="secondary"><Link className='text-decoration-none' to='/login'>Login</Link></Button>
+                        {/* <Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link> */}
+                        {
+                            user && <p>{user.email}</p>
+                        }
+                        {user?<Button onClick={logOut}>Log Out</Button>: <Button variant="secondary"><Link className='text-decoration-none' to='/login'>Login</Link></Button>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
