@@ -10,6 +10,7 @@ const Details = ({detail}) => {
                     <Card.Text><b>Ingredients:</b> {ingredients}</Card.Text>
                     <Card.Text><b>Method:</b>{cooking_method}</Card.Text>
                     <Card.Text><b>Rating:</b>{rating}</Card.Text>
+                    <button className='hover'> Favorite</button>
                 </Card.Body>
             </Card>
     );
