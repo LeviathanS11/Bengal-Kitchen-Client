@@ -54,7 +54,7 @@ const Register = () => {
                     </div>
                     <input className='btn-submit' type="submit" value="Sign Up" />
                 </form>
-                <p><small>Already have an Account!!!<Link to='/login'>SignIn </Link></small></p>
+                <p><small>Already have an Account!!!<Link className='text-decoration-none' to='/login'>SignIn </Link></small></p>
                 <p className='text-error'>{error}</p>
             </div>
             <Footer></Footer>

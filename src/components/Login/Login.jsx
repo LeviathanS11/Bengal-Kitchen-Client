@@ -68,9 +68,9 @@ const Login = () => {
                 </div>
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
-            <p><small>New to this Website!!!<Link to='/signup'>Create New Account</Link></small></p>
-            <button onClick={handleGoogleSignIn}>Google login</button>
-            <button onClick={handleGithubSignIn}>Github Sign-in</button>
+            <p><small>New to this Website!!!<Link className='text-decoration-none' to='/signup'>Create New Account</Link></small></p>
+            <button className='hover' onClick={handleGoogleSignIn}>Google login</button>
+            <button className='hover' onClick={handleGithubSignIn}>Github Sign-in</button>
             <p className='text-error'>{error}</p>
         </div>
         <Footer></Footer>

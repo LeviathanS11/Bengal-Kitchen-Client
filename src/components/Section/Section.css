@@ -1,0 +1,8 @@
+.background{
+    background-image: url(../../assets/syd-wachs-epqNIYI6S7E-unsplash.jpg);
+    height: 100vh;
+    width: 100%;
+    background-position: center ;
+    background-size: cover;
+    background-repeat: repeat;
+}
