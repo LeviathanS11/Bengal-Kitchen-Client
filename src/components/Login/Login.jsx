@@ -8,8 +8,6 @@ import Footer from '../footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
 
 const Login = () => {
-    const [show, setShow] = useState(false);
-    const [error, setError] = useState('');
     const { signIn, handleGoogle, handleGithub } = useContext(AuthContext);
     const GoogleProvider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider();
@@ -27,7 +25,7 @@ const Login = () => {
                 form.reset();
             })
             .catch(error => {
-                setError(error)
+                console.log(error)
             })
     }
     const handleGoogleSignIn = () => {
@@ -82,14 +80,6 @@ const Login = () => {
                     <Button onClick={handleGithubSignIn} variant="primary" type="submit">
                         Github Sign-in
                     </Button>
-
-
-                    <Form.Text className="text-danger">
-
-                    </Form.Text>
-                    <Form.Text className="text-success">
-
-                    </Form.Text>
                 </Form>
 
             </Container>
