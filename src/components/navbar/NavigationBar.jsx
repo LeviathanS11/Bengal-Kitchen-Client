@@ -19,7 +19,7 @@ const NavigationBar = () => {
                     <Nav>
                         {/* <Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link> */}
                         {
-                            user && <p>{user.email}</p>
+                            user && <p className=''>{user.email}</p>
                         }
                         {user?<Button onClick={logOut}>Log Out</Button>: <Button variant="secondary"><Link className='text-decoration-none' to='/login'>Login</Link></Button>}
                     </Nav>
