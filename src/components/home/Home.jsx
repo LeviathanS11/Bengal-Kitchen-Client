@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ChefCard from '../Cards/ChefCard';
 import './Home.css'
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
     const [chefs, setChefs] = useState([])
@@ -13,14 +13,14 @@ const Home = () => {
             )
     }, [])
     return (
-        <div>
+        <Container className='bannerBg'>
             <div className='chef-container'>
                 {
                     chefs.map(chef =>
                         <ChefCard key={chef.id} chef={chef}></ChefCard>)
                 }
             </div>
-        </div>
+        </Container>
     );
 };
 

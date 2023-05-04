@@ -16,7 +16,7 @@ const NavigationBar = () => {
                     </Nav>
                     <Nav>
                         <Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link>
-                        <Button variant="secondary">Login</Button>
+                        <Button variant="secondary"><Link to='/login'>Login</Link></Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
