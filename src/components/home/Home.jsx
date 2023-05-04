@@ -14,6 +14,7 @@ const Home = () => {
     }, [])
     return (
         <Container>
+            <h1 className='text-center my-3'>Our Chefs</h1>
             <div className='chef-container'>
                 {
                     chefs.map(chef =>
