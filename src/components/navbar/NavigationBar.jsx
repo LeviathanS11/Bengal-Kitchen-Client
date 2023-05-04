@@ -17,9 +17,9 @@ const NavigationBar = () => {
                         <Link className='text-decoration-none ps-2' to="/blog">Blog</Link>
                     </Nav>
                     <Nav>
-                        {/* <Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link> */}
+                    {user  ?<img style={{ fontSize: '2rem' }}  src={user.photoURL} alt="" /> :<Link><FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle></Link>}
                         {
-                            user && <p className=''>{user.email}</p>
+                            user && <p className='text-primary'>{user.email}</p>
                         }
                         {user?<Button onClick={logOut}>Log Out</Button>: <Button variant="secondary"><Link className='text-decoration-none' to='/login'>Login</Link></Button>}
                     </Nav>
