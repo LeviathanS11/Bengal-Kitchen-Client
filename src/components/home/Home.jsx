@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ChefCard from '../Cards/ChefCard';
 import './Home.css'
 import { Container } from 'react-bootstrap';
+import Footer from '../footer/Footer';
 
 const Home = () => {
     const [chefs, setChefs] = useState([])

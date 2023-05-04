@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../navbar/NavigationBar';
+import Footer from '../footer/Footer';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -56,6 +57,7 @@ const Register = () => {
                 <p><small>Already have an Account!!!<Link to='/login'>SignIn </Link></small></p>
                 <p className='text-error'>{error}</p>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

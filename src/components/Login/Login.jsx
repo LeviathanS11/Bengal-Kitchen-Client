@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import NavigationBar from '../navbar/NavigationBar';
+import Footer from '../footer/Footer';
 
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -72,6 +73,7 @@ const Login = () => {
             <button onClick={handleGithubSignIn}>Github Sign-in</button>
             <p className='text-error'>{error}</p>
         </div>
+        <Footer></Footer>
         </div>
     );
 };
