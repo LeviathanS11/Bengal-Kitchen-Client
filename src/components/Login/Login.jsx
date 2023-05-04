@@ -5,11 +5,12 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import NavigationBar from '../navbar/NavigationBar';
 import Footer from '../footer/Footer';
+import { Button, Container, Form } from 'react-bootstrap';
 
 const Login = () => {
     const [show, setShow] = useState(false);
     const [error, setError] = useState('');
-    const { signIn,handleGoogle,handleGithub } = useContext(AuthContext);
+    const { signIn, handleGoogle, handleGithub } = useContext(AuthContext);
     const GoogleProvider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider();
 
@@ -29,51 +30,70 @@ const Login = () => {
                 setError(error)
             })
     }
-    const handleGoogleSignIn=()=>{
+    const handleGoogleSignIn = () => {
         handleGoogle(GoogleProvider)
-        .then(result=>{
-            const loggedUser=result.user;
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
-    const handleGithubSignIn=()=>{
+    const handleGithubSignIn = () => {
         handleGithub(GithubProvider)
-        .then(result=>{
-            const loggedUser=result.user;
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
+
         <div>
             <NavigationBar></NavigationBar>
-            <div className='form-container'>
-            <h2 className='form-title'>Login</h2>
-            <form onSubmit={handleSignIn}>
-                <div className='form-control'>
-                    <label htmlFor="">Email</label>
-                    <input type="email" name="email" id="" required />
-                </div>
-                <div className='form-control'>
-                    <label htmlFor="">Password</label>
-                    <input type={show ? "text" : "password"} name="password" id="" required />
-                    <p onClick={() => setShow(!show)}><small>
-                        {
-                            show ? <span>Hide password</span> : <span>show password</span>
-                        }
-                    </small></p>
-                </div>
-                <input className='btn-submit' type="submit" value="Login" />
-            </form>
-            <p><small>New to this Website!!!<Link className='text-decoration-none' to='/signup'>Create New Account</Link></small></p>
-            <button className='hover' onClick={handleGoogleSignIn}>Google login</button>
-            <button className='hover' onClick={handleGithubSignIn}>Github Sign-in</button>
-            <p className='text-error'>{error}</p>
-        </div>
-        <Footer></Footer>
+            <Container className='mx-auto w-50'>
+                <h3>Please Login</h3>
+                <Form onSubmit={handleSignIn}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" name='email' placeholder="Enter email" required />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" name='password' placeholder="Password" required />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Login
+                    </Button>
+
+                    <br />
+
+                    <Form.Text>New to This Website!
+                        <Link className='text-decoration-none' to='/signup'>Please Sign Up</Link>
+                    </Form.Text>
+                    <br />
+
+
+                    <Button onClick={handleGoogleSignIn} variant="primary" type="submit">
+                        Google login
+                    </Button>
+                    <Button onClick={handleGithubSignIn} variant="primary" type="submit">
+                        Github Sign-in
+                    </Button>
+
+
+                    <Form.Text className="text-danger">
+
+                    </Form.Text>
+                    <Form.Text className="text-success">
+
+                    </Form.Text>
+                </Form>
+
+            </Container>
+            <Footer></Footer>
         </div>
     );
 };
