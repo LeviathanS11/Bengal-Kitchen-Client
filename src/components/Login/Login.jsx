@@ -3,6 +3,7 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import NavigationBar from '../navbar/NavigationBar';
 
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -46,7 +47,9 @@ const Login = () => {
         })
     }
     return (
-        <div className='form-container'>
+        <div>
+            <NavigationBar></NavigationBar>
+            <div className='form-container'>
             <h2 className='form-title'>Login</h2>
             <form onSubmit={handleSignIn}>
                 <div className='form-control'>
@@ -68,6 +71,7 @@ const Login = () => {
             <button onClick={handleGoogleSignIn}>Google login</button>
             <button onClick={handleGithubSignIn}>Github Sign-in</button>
             <p className='text-error'>{error}</p>
+        </div>
         </div>
     );
 };

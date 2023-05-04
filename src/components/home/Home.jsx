@@ -13,7 +13,7 @@ const Home = () => {
             )
     }, [])
     return (
-        <Container className='bannerBg'>
+        <Container>
             <div className='chef-container'>
                 {
                     chefs.map(chef =>

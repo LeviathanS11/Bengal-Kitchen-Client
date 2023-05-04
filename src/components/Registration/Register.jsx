@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
+import NavigationBar from '../navbar/NavigationBar';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -30,6 +31,7 @@ const Register = () => {
     }
     return (
         <div>
+            <NavigationBar></NavigationBar>
             <div className='form-container'>
                 <h2 className='form-title'>Sign Up</h2>
                 <form onSubmit={handleSignUp}>
@@ -49,7 +51,7 @@ const Register = () => {
                         <label htmlFor="">imageURL</label>
                         <input type="text" name="imageURL" id="" required />
                     </div>
-                    <input className='btn-submit' type="submit" value="Login" />
+                    <input className='btn-submit' type="submit" value="Sign Up" />
                 </form>
                 <p><small>Already have an Account!!!<Link to='/login'>SignIn </Link></small></p>
                 <p className='text-error'>{error}</p>

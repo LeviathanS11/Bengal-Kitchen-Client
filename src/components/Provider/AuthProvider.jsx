@@ -4,9 +4,10 @@ import app from '../../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
-const [user, setUser] = useState(null);
+
 
 const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -32,7 +33,6 @@ const AuthProvider = ({ children }) => {
     }, [])
     const authInfo = {
         user,
-        loading,
         createUser,
         signIn,
         logOut,

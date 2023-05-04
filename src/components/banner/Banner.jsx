@@ -4,7 +4,13 @@ import './Banner.css';
 const Banner = () => {
     return (
         <div className='bannerBg'>
-            <h3 className='text-center'>This is Banner</h3>
+            <div className='overlay'>
+                <h1 className='text'>Only Quality Food</h1>
+                <div >
+                    <button className='hover'>View Menu</button>
+                    <button className='hover'>Set Reservation</button>
+                </div>
+            </div>
         </div>
     );
 };

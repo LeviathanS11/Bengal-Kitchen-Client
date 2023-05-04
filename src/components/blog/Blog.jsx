@@ -1,8 +1,10 @@
 import React from 'react';
+import NavigationBar from '../navbar/NavigationBar';
 
 const Blog = () => {
     return (
         <div>
+            <NavigationBar></NavigationBar>
             <i><b>Question and Answer.</b></i>
             <div>
                 <p>
